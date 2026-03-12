@@ -1,0 +1,506 @@
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arch Studio | Kreatywna Architektura</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+z-index:100;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
+}
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(120deg,#111,#222);
+}
+
+header h1{
+font-size:70px;
+letter-spacing:3px;
+}
+
+header p{
+margin-top:20px;
+font-size:20px;
+opacity:.8;
+}
+
+header a{
+margin-top:30px;
+padding:15px 35px;
+border:2px solid white;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+header a:hover{
+background:white;
+color:black;
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+font-size:40px;
+margin-bottom:40px;
+position:relative;
+}
+
+.section-title::after{
+content:"";
+width:60px;
+height:4px;
+background:#f2c94c;
+position:absolute;
+bottom:-10px;
+left:0;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:10px;
+}
+
+.filter-buttons button{
+margin:10px;
+padding:10px 20px;
+border:none;
+background:#f2c94c;
+cursor:pointer;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.project{
+background:#1b1b1b;
+border-radius:10px;
+overflow:hidden;
+transition:.3s;
+cursor:pointer;
+}
+
+.project img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.project:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+.project h3{
+padding:20px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.service{
+background:#1c1c1c;
+padding:40px;
+border-radius:10px;
+transition:.3s;
+}
+
+.service:hover{
+background:#f2c94c;
+color:black;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.testimonial{
+background:#1c1c1c;
+padding:30px;
+border-radius:10px;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact form{
+display:flex;
+flex-direction:column;
+}
+
+.contact input,
+.contact textarea{
+margin-bottom:15px;
+padding:12px;
+border:none;
+border-radius:5px;
+}
+
+.contact button{
+padding:15px;
+border:none;
+background:#f2c94c;
+cursor:pointer;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#111;
+margin-top:50px;
+}
+
+.socials a{
+margin:0 10px;
+color:#f2c94c;
+text-decoration:none;
+}
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+#lightbox img{
+max-width:80%;
+max-height:80%;
+border-radius:10px;
+}
+
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+padding:10px 15px;
+font-size:20px;
+border:none;
+background:#f2c94c;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+header h1{
+font-size:40px;
+}
+
+.about,
+.contact{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div><strong>ARCH STUDIO</strong></div>
+<div>
+<a href="#about">O mnie</a>
+<a href="#projects">Projekty</a>
+<a href="#services">Usługi</a>
+<a href="#contact">Kontakt</a>
+</div>
+</nav>
+
+<header>
+
+<h1>Kreatywna Architektura</h1>
+<p>Projektuję przestrzenie, które inspirują</p>
+<a href="#projects">Zobacz projekty</a>
+
+</header>
+
+<section id="about">
+
+<h2 class="section-title">O mnie</h2>
+
+<div class="about">
+
+<div>
+<p>
+Jestem architektem specjalizującym się w nowoczesnych
+i kreatywnych projektach architektonicznych.
+Tworzę przestrzenie które łączą design,
+funkcjonalność oraz naturę.
+</p>
+
+<p>
+Moje projekty obejmują domy prywatne,
+budynki komercyjne oraz koncepcje urbanistyczne.
+</p>
+</div>
+
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">Projekty</h2>
+
+<div class="filter-buttons">
+<button onclick="filterProjects('all')">Wszystkie</button>
+<button onclick="filterProjects('dom')">Domy</button>
+<button onclick="filterProjects('biuro')">Biura</button>
+</div>
+
+<div class="projects">
+
+<div class="project dom">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+<h3>Dom minimalistyczny</h3>
+</div>
+
+<div class="project biuro">
+<img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
+<h3>Nowoczesne biuro</h3>
+</div>
+
+<div class="project dom">
+<img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688">
+<h3>Nowoczesna willa</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<h2 class="section-title">Usługi</h2>
+
+<div class="services">
+
+<div class="service">
+<h3>Projekt architektoniczny</h3>
+<p>Kompleksowe projekty budynków mieszkalnych i komercyjnych.</p>
+</div>
+
+<div class="service">
+<h3>Wizualizacje 3D</h3>
+<p>Realistyczne wizualizacje projektów.</p>
+</div>
+
+<div class="service">
+<h3>Konsultacje</h3>
+<p>Doradztwo w planowaniu inwestycji.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Opinie klientów</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>"Świetny projekt domu, bardzo nowoczesny."</p>
+<strong>- Anna K.</strong>
+</div>
+
+<div class="testimonial">
+<p>"Profesjonalizm i niesamowita kreatywność."</p>
+<strong>- Marek P.</strong>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Kontakt</h2>
+
+<div class="contact">
+
+<div>
+<p>Email: studio@architekt.pl</p>
+<p>Telefon: +48 000 000 000</p>
+<p>Miasto: Warszawa</p>
+</div>
+
+<form id="contactForm">
+
+<input type="text" placeholder="Twoje imię" id="name">
+<input type="email" placeholder="Email" id="email">
+<textarea rows="5" placeholder="Wiadomość" id="message"></textarea>
+
+<button type="submit">Wyślij</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Arch Studio</p>
+
+<div class="socials">
+<a href="#">Instagram</a>
+<a href="#">LinkedIn</a>
+<a href="#">Behance</a>
+</div>
+
+</footer>
+
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<button id="topBtn">↑</button>
+
+<script>
+
+const images=document.querySelectorAll(".project img");
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightbox-img");
+
+images.forEach(img=>{
+img.addEventListener("click",()=>{
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+});
+});
+
+lightbox.addEventListener("click",()=>{
+lightbox.style.display="none";
+});
+
+function filterProjects(category){
+
+const projects=document.querySelectorAll(".project");
+
+projects.forEach(project=>{
+
+if(category==="all"){
+project.style.display="block";
+}
+
+else if(project.classList.contains(category)){
+project.style.display="block";
+}
+
+else{
+project.style.display="none";
+}
+
+});
+
+}
+
+const form=document.getElementById("contactForm");
+
+form.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
+const message=document.getElementById("message").value;
+
+if(name===""||email===""||message===""){
+alert("Uzupełnij wszystkie pola!");
+}
+
+else{
+alert("Wiadomość wysłana!");
+form.reset();
+}
+
+});
+
+const topBtn=document.getElementById("topBtn");
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+};
+
+</script>
+
+</body>
+</html>
+```
