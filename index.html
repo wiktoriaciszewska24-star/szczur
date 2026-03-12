@@ -4,12 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Arch Studio | Kreatywna Architektura</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+--mainColor:#f2c94c;
+}
 
 *{
 margin:0;
@@ -23,6 +26,7 @@ background:#0f0f0f;
 color:white;
 line-height:1.6;
 overflow-x:hidden;
+transition:0.4s;
 }
 
 nav{
@@ -41,7 +45,6 @@ nav a{
 color:white;
 text-decoration:none;
 margin-left:20px;
-font-size:14px;
 }
 
 header{
@@ -56,26 +59,18 @@ background:linear-gradient(120deg,#111,#222);
 
 header h1{
 font-size:70px;
-letter-spacing:3px;
-}
-
-header p{
-margin-top:20px;
-font-size:20px;
-opacity:.8;
 }
 
 header a{
 margin-top:30px;
 padding:15px 35px;
-border:2px solid white;
-text-decoration:none;
+border:2px solid var(--mainColor);
 color:white;
-transition:.3s;
+text-decoration:none;
 }
 
 header a:hover{
-background:white;
+background:var(--mainColor);
 color:black;
 }
 
@@ -93,7 +88,7 @@ position:relative;
 content:"";
 width:60px;
 height:4px;
-background:#f2c94c;
+background:var(--mainColor);
 position:absolute;
 bottom:-10px;
 left:0;
@@ -115,7 +110,7 @@ border-radius:10px;
 margin:10px;
 padding:10px 20px;
 border:none;
-background:#f2c94c;
+background:var(--mainColor);
 cursor:pointer;
 }
 
@@ -129,8 +124,8 @@ gap:30px;
 background:#1b1b1b;
 border-radius:10px;
 overflow:hidden;
-transition:.3s;
 cursor:pointer;
+transition:.3s;
 }
 
 .project img{
@@ -140,7 +135,7 @@ object-fit:cover;
 }
 
 .project:hover{
-transform:translateY(-10px) scale(1.02);
+transform:translateY(-10px);
 }
 
 .project h3{
@@ -161,7 +156,7 @@ transition:.3s;
 }
 
 .service:hover{
-background:#f2c94c;
+background:var(--mainColor);
 color:black;
 }
 
@@ -199,21 +194,19 @@ border-radius:5px;
 .contact button{
 padding:15px;
 border:none;
-background:#f2c94c;
+background:var(--mainColor);
 cursor:pointer;
-font-weight:bold;
 }
 
 footer{
 text-align:center;
 padding:40px;
 background:#111;
-margin-top:50px;
 }
 
 .socials a{
 margin:0 10px;
-color:#f2c94c;
+color:var(--mainColor);
 text-decoration:none;
 }
 
@@ -232,7 +225,6 @@ align-items:center;
 #lightbox img{
 max-width:80%;
 max-height:80%;
-border-radius:10px;
 }
 
 #topBtn{
@@ -242,19 +234,50 @@ right:20px;
 padding:10px 15px;
 font-size:20px;
 border:none;
-background:#f2c94c;
+background:var(--mainColor);
 cursor:pointer;
+}
+
+/* ROBOT */
+
+#robot{
+position:fixed;
+bottom:20px;
+left:20px;
+font-size:40px;
+cursor:pointer;
+animation:walk 8s linear infinite;
+}
+
+@keyframes walk{
+
+0%{left:20px;}
+50%{left:80%;}
+100%{left:20px;}
+
+}
+
+#robotSpeech{
+position:fixed;
+bottom:90px;
+left:20px;
+background:white;
+color:black;
+padding:10px 15px;
+border-radius:10px;
+display:none;
+max-width:200px;
 }
 
 @media(max-width:900px){
 
-header h1{
-font-size:40px;
-}
-
 .about,
 .contact{
 grid-template-columns:1fr;
+}
+
+header h1{
+font-size:40px;
 }
 
 }
@@ -277,7 +300,7 @@ grid-template-columns:1fr;
 <header>
 
 <h1>Kreatywna Architektura</h1>
-<p>Projektuję przestrzenie, które inspirują</p>
+<p>Projektuję przestrzenie które inspirują</p>
 <a href="#projects">Zobacz projekty</a>
 
 </header>
@@ -292,13 +315,9 @@ grid-template-columns:1fr;
 <p>
 Jestem architektem specjalizującym się w nowoczesnych
 i kreatywnych projektach architektonicznych.
-Tworzę przestrzenie które łączą design,
-funkcjonalność oraz naturę.
 </p>
-
 <p>
-Moje projekty obejmują domy prywatne,
-budynki komercyjne oraz koncepcje urbanistyczne.
+Łączę design, funkcjonalność oraz naturę.
 </p>
 </div>
 
@@ -347,17 +366,17 @@ budynki komercyjne oraz koncepcje urbanistyczne.
 
 <div class="service">
 <h3>Projekt architektoniczny</h3>
-<p>Kompleksowe projekty budynków mieszkalnych i komercyjnych.</p>
+<p>Kompleksowe projekty budynków.</p>
 </div>
 
 <div class="service">
 <h3>Wizualizacje 3D</h3>
-<p>Realistyczne wizualizacje projektów.</p>
+<p>Realistyczne wizualizacje.</p>
 </div>
 
 <div class="service">
 <h3>Konsultacje</h3>
-<p>Doradztwo w planowaniu inwestycji.</p>
+<p>Doradztwo inwestycyjne.</p>
 </div>
 
 </div>
@@ -371,12 +390,12 @@ budynki komercyjne oraz koncepcje urbanistyczne.
 <div class="testimonials">
 
 <div class="testimonial">
-<p>"Świetny projekt domu, bardzo nowoczesny."</p>
+<p>"Świetny projekt domu."</p>
 <strong>- Anna K.</strong>
 </div>
 
 <div class="testimonial">
-<p>"Profesjonalizm i niesamowita kreatywność."</p>
+<p>"Mega kreatywny architekt."</p>
 <strong>- Marek P.</strong>
 </div>
 
@@ -393,7 +412,6 @@ budynki komercyjne oraz koncepcje urbanistyczne.
 <div>
 <p>Email: studio@architekt.pl</p>
 <p>Telefon: +48 000 000 000</p>
-<p>Miasto: Warszawa</p>
 </div>
 
 <form id="contactForm">
@@ -428,22 +446,44 @@ budynki komercyjne oraz koncepcje urbanistyczne.
 
 <button id="topBtn">↑</button>
 
+<div id="robot">🤖</div>
+<div id="robotSpeech"></div>
+
 <script>
+
+/* ZMIANA KOLORÓW */
+
+function randomColor(){
+return "hsl(" + Math.floor(Math.random()*360) + ",70%,60%)";
+}
+
+setInterval(()=>{
+document.documentElement.style.setProperty(
+"--mainColor",
+randomColor()
+);
+},2000);
+
+
+/* LIGHTBOX */
 
 const images=document.querySelectorAll(".project img");
 const lightbox=document.getElementById("lightbox");
 const lightboxImg=document.getElementById("lightbox-img");
 
 images.forEach(img=>{
-img.addEventListener("click",()=>{
+img.onclick=()=>{
 lightbox.style.display="flex";
 lightboxImg.src=img.src;
-});
+}
 });
 
-lightbox.addEventListener("click",()=>{
+lightbox.onclick=()=>{
 lightbox.style.display="none";
-});
+}
+
+
+/* FILTR PROJEKTÓW */
 
 function filterProjects(category){
 
@@ -467,6 +507,9 @@ project.style.display="none";
 
 }
 
+
+/* FORMULARZ */
+
 const form=document.getElementById("contactForm");
 
 form.addEventListener("submit",function(e){
@@ -488,14 +531,45 @@ form.reset();
 
 });
 
-const topBtn=document.getElementById("topBtn");
 
-topBtn.onclick=function(){
+/* SCROLL UP */
+
+document.getElementById("topBtn").onclick=function(){
 
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+
+};
+
+
+/* ROBOT */
+
+const robot=document.getElementById("robot");
+const speech=document.getElementById("robotSpeech");
+
+const messages=[
+
+"Ten projekt potrzebuje więcej betonu 😎",
+"Może dodamy basen na dachu?",
+"Minimalizm = mniej ścian!",
+"Ten dom wygląda jak Minecraft 😂",
+"Więcej okien = więcej światła!"
+
+];
+
+robot.onclick=()=>{
+
+speech.style.display="block";
+
+speech.innerText=messages[
+Math.floor(Math.random()*messages.length)
+];
+
+setTimeout(()=>{
+speech.style.display="none";
+},3000);
 
 };
 
